@@ -15,12 +15,25 @@
 <body>
   <div id="root"></div>
   <script>
-    // Shims para que el código compilado encuentre React y Recharts
-    const { useState, useEffect, useRef, useCallback, useMemo, createElement } = React;
-    const {
-      PieChart, Pie, Cell, BarChart, Bar, LineChart, Line,
-      XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid
-    } = Recharts;
+    var useState = React.useState;
+    var useEffect = React.useEffect;
+    var useRef = React.useRef;
+    var useCallback = React.useCallback;
+    var useMemo = React.useMemo;
+    var createElement = React.createElement;
+    var PieChart = Recharts.PieChart;
+    var Pie = Recharts.Pie;
+    var Cell = Recharts.Cell;
+    var BarChart = Recharts.BarChart;
+    var Bar = Recharts.Bar;
+    var LineChart = Recharts.LineChart;
+    var Line = Recharts.Line;
+    var XAxis = Recharts.XAxis;
+    var YAxis = Recharts.YAxis;
+    var Tooltip = Recharts.Tooltip;
+    var ResponsiveContainer = Recharts.ResponsiveContainer;
+    var Legend = Recharts.Legend;
+    var CartesianGrid = Recharts.CartesianGrid;
 
 // ─── BACKUP 29-JUN-2026: TC Zeta + Atlas Inst. + CU CABAL + CU Panal (1779 transacciones) ─
 const MP_DATA = {
@@ -23761,7 +23774,7 @@ function Exportar({
 // ═══════════════════════════════════════════════════════════════════════════════
 // APP
 // ═══════════════════════════════════════════════════════════════════════════════
-export default function App() {
+function App() {
   const [data, setData] = useState(() => {
     const saved = loadData();
     if (saved && saved.transactions && saved.transactions.length > 0) return saved;
@@ -24028,8 +24041,7 @@ export default function App() {
 }
 
 
-    // Montar la app
-    const root = ReactDOM.createRoot(document.getElementById('root'));
+    var root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(React.createElement(App));
   </script>
 </body>
